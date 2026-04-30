@@ -1,0 +1,12 @@
+.git/
+build/
+external/
+out/
+prebuilts/
+tools/
+kernel/bazel-bin
+kernel/bazel-kernel
+kernel/bazel-out
+kernel/bazel-testlogs
+kernel/out/
+kernel/prebuilts/
