@@ -10,3 +10,4 @@ kernel/bazel-out
 kernel/bazel-testlogs
 kernel/out/
 kernel/prebuilts/
+kernel/tools/mkbootimg
