@@ -59,13 +59,15 @@ def _write_localversion(ctx):
         stable_scmversion_cmd = _get_status_at_path(ctx, "STABLE_SCMVERSIONS", '"${KERNEL_DIR}"')
     else:
         inputs = []
-        stable_scmversion_cmd = "echo '-maybe-dirty'"
+        stable_scmversion_cmd = ""
 
     transitive_inputs = [ctx.attr.env[KernelEnvInfo].inputs]
     tools = ctx.attr.env[KernelEnvInfo].tools
 
     cmd = ctx.attr.env[KernelEnvInfo].setup + """
         (
+            export LANG=en_US.UTF-8
+            export LC_ALL=en_US.UTF-8
             # Extract the Android release version. If there is no match, then return 255
             # and clear the variable $android_release
             set +e
